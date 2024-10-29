@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       ))}
       {loading ? <Skeleton className="h-4 w-[250px] bg-child" /> : null }
-      <div className="fixed left-0 bottom-0 flex flex-row gap-2 p-2 bg-black/50 backdrop-blur-md border-t border-white/10 w-full md:w-[60%] md:max-w-[60rem]">
+      <div className="fixed left-0 md:left-auto bottom-0 flex flex-row gap-2 p-2 bg-black/50 backdrop-blur-md border-t border-white/10 w-full md:w-[60%] md:max-w-[60rem]">
         <Textarea className={`bg-parent border-white/10 rounded-lg ${loading ? 'pointer-events-none' : 'pointer-events-all'}`} placeholder="Type your message here." value={loading ? '' : prompt} onChange={(e) => setPrompt(e.target.value)} />
         <div className="flex flex-col gap-2">
           <Button disabled={loading} onClick={sendMessage} className='flex items-center justify-center bg-white hover:bg-zinc-300 border border-gray-300 rounded-lg h-10 w-10'>{loading ? <Loader className='text-black animate-spin duration-1000' /> : <CornerDownLeft className='text-black' />}</Button>
